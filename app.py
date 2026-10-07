@@ -94,8 +94,21 @@ section.main .stButton > button{
   background:var(--card); border:1px solid var(--line); border-radius:12px;
   padding:.9rem 1rem; margin-bottom:.8rem;
 }
+/* user question: right-aligned navy bubble, avatar on the right */
 [data-testid="stChatMessage"]:has(.is-user){
-  background:transparent; border:none; padding:.2rem 1rem;
+  flex-direction:row-reverse; background:transparent; border:none;
+  padding:.2rem 0; gap:.6rem;
+}
+[data-testid="stChatMessage"]:has(.is-user) > div:first-child{ margin:0 !important; }
+[data-testid="stChatMessage"]:has(.is-user) [data-testid="stChatMessageContent"]{
+  flex:0 1 auto !important; width:auto !important; max-width:78%;
+  margin-left:auto !important; margin-right:0 !important;
+  background:var(--ink); border-radius:16px 16px 4px 16px; padding:.55rem 1rem;
+}
+[data-testid="stChatMessage"]:has(.is-user) .stMarkdown,
+[data-testid="stChatMessage"]:has(.is-user) [data-testid="stMarkdownContainer"]{ margin:0 !important; }
+[data-testid="stChatMessage"]:has(.is-user) [data-testid="stChatMessageContent"] p{
+  color:#FFFFFF; margin:0 !important; text-align:left; line-height:1.6;
 }
 [data-testid="stChatMessage"] p, [data-testid="stChatMessage"] li{ font-size:1rem; line-height:1.7; }
 [data-testid="stChatInput"]{ border-radius:12px; }
